@@ -26,6 +26,7 @@ Vue.component('product', {
             <div>
                 <product-tabs :shipping="shipping" :reviews="reviews"></product-tabs>
             <a v-bind:href="link"> {{ linkText }}</a>
+            </div>
         </div>`,
     data() {
         return {
@@ -112,7 +113,6 @@ Vue.component('product-review', {
     template: `
     <form class="review-form" @submit.prevent="onSubmit">
         <p v-if="errors.length">
-        <b>Please correct the following error(s):</b>
             <ul>
                 <li v-for="error in errors">{{ error }}</li>
             </ul>
